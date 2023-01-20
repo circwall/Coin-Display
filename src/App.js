@@ -3,6 +3,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useGlobalcontext } from './Context'
 import Coins from './Components/Coins';
+import { BrowserRouter } from "react-router-dom";
+import Home from './Components/Home';
+import Nav from './Components/Nav';
 function App() {
 
   const {coinsy} = useGlobalcontext();
@@ -10,6 +13,8 @@ function App() {
 
   return (
     <section>
+      
+      <Home/>
       <Coins/>
     </section>
   );
