@@ -5,4 +5,16 @@ table {
 
 .table-head{
     width: 100%;
+    text-align: left;
+}
+
+table td{
+  border-top: .3px solid  rgba(64, 63, 63, 0.05);
+  border-bottom: .3px solid  rgba(64, 63, 63, 0.05);
+}
+
+table :hover{
+  cursor: pointer;
+  /* box-shadow: 0px .3px 0px .1px rgb(30, 29, 29); */
+  background: rgba(48, 46, 46, 0.05);
 }

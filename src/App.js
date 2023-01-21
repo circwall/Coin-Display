@@ -8,9 +8,15 @@ import Home from './Components/Home';
 import Nav from './Components/Nav';
 function App() {
 
-  const {coinsy} = useGlobalcontext();
+  const {loading} = useGlobalcontext();
 
-
+  if(loading){
+    return(
+        <section className='section'>
+            <h4>Loading... <div className="spinner-border"></div></h4>
+        </section>
+    )
+}
   return (
     <section>
       

@@ -23,7 +23,7 @@ const AppProvider =({ children })=>{
             symbol:coin.item.symbol, price:coin.item.price_btc,
             image:coin.item.thumb}})
             setCoins(Coinsey)
-        console.log(response)
+        // console.log(response)
         setLoading(false)
        }).catch((error)=>{
         console.log(error)

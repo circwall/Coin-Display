@@ -1,47 +1,63 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import { useGlobalcontext } from '../Context'
 import ReactTable from "react-table";  
 import axios from "axios";
+import CurrencyDude from "./CurrencyFormat";
+import * as Icon from 'react-bootstrap-icons';
 
 const Coins = ()=>{
     const {coinsy,loading} =useGlobalcontext();
-    const [maingee,setMaingee] = useState([])
-    if(loading){
-        return(
-            <section className='section'>
-                <h4>Loading... <div className="spinner-border"></div></h4>
-            </section>
-        )
-    }
-    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd').then((response)=>{
+    const [maingee,setMaingee] = useState([]);
+    useEffect(()=>{
+        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&sparkline=false').then((response)=>{
         console.log(response);
+
+        
         
         const catcher = response.data.map(eachcoin=>{return{
             id:eachcoin.id,name:eachcoin.name,img:eachcoin.image,symbol:eachcoin.symbol,
-            price:eachcoin.current_price,marketCap:eachcoin.market_cap_change_24h
+            price:eachcoin.current_price,marketCap:eachcoin.market_cap_change_percentage_24h,
+            rank:eachcoin.market_cap_rank,
 
         }})
         setMaingee(catcher)
     }).catch((error)=>{
         console.log(error)
+
+            return(
+                <div>
+                    please Check Network Connection
+                </div>
+            )
+
     })
+    },[coinsy])
+    
+    
+   
 
     return(
         <section className="pt-4 container">
              
-            <table className="table p-2">
+            <table className="table p-0">
                 <tr className="table-head">
                     <th className="p-3">#</th>
-                    <th className="p-3">Name</th>
+                    <th className="p-3">coin</th>
+                    <th className="p-3">name</th>
                     <th className="p-3">price</th>
+                    <th>market Cap 24hrs <Icon.Arrow90degRight/></th>
+
                 </tr>
                 {maingee.map((singleCoin) => {
                 return (
                     
-                    <tr className="p-3" key={singleCoin.id}>
-                        <td className="p-3"><img src={singleCoin.img} style={{width:'40px'}}/><span>({singleCoin.symbol})</span></td>
+                    <tr className="tr" key={singleCoin.id}>
+                        <td>{singleCoin.rank}</td>
+                        <td className="td"><img src={singleCoin.img} style={{width:'40px'}}/>{singleCoin.symbol}</td>
                         <td className="p-3">{singleCoin.name}</td>
-                        <td className="p-3">{singleCoin.price}</td>
+                        <td className="p-3">{CurrencyDude(singleCoin.price)}</td>
+                        <td className={singleCoin.marketCap < 0 ? 'text-danger ' : 'text-success'}>
+                        {singleCoin.marketCap < 0? <i><Icon.ArrowDownRight/></i>:<i><Icon.ArrowUpRight/></i>}{singleCoin.marketCap}%</td>
                     </tr>
                 )
                 })}
