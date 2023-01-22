@@ -12,8 +12,8 @@ function App() {
 
   if(loading){
     return(
-        <section className='section'>
-            <h4>Loading... <div className="spinner-border"></div></h4>
+        <section className='loading-section container text-center'>
+            <div className='pt-5 content'><h4>Loading... <div className="spinner-border"></div></h4></div>
         </section>
     )
 }

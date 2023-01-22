@@ -9,7 +9,7 @@ const Coins = ()=>{
     const {coinsy,loading} =useGlobalcontext();
     const [maingee,setMaingee] = useState([]);
     useEffect(()=>{
-        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&sparkline=false').then((response)=>{
+        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false').then((response)=>{
         console.log(response);
 
         
@@ -17,7 +17,7 @@ const Coins = ()=>{
         const catcher = response.data.map(eachcoin=>{return{
             id:eachcoin.id,name:eachcoin.name,img:eachcoin.image,symbol:eachcoin.symbol,
             price:eachcoin.current_price,marketCap:eachcoin.market_cap_change_percentage_24h,
-            rank:eachcoin.market_cap_rank,
+            rank:eachcoin.market_cap_rank,marketCap1:eachcoin.market_cap
 
         }})
         setMaingee(catcher)
@@ -31,13 +31,13 @@ const Coins = ()=>{
             )
 
     })
-    },[coinsy])
+    },[])
     
     
    
 
     return(
-        <section className="pt-4 container">
+        <section className="mt-5 pt-4 container">
              
             <table className="table p-0">
                 <tr className="table-head">
@@ -45,7 +45,8 @@ const Coins = ()=>{
                     <th className="p-3">coin</th>
                     <th className="p-3">name</th>
                     <th className="p-3">price</th>
-                    <th>market Cap 24hrs <Icon.Arrow90degRight/></th>
+                    <th>mkt Cap</th>
+                    <th>24h </th>
 
                 </tr>
                 {maingee.map((singleCoin) => {
@@ -53,10 +54,12 @@ const Coins = ()=>{
                     
                     <tr className="tr" key={singleCoin.id}>
                         <td className="p-3">{singleCoin.rank}</td>
-                        <td className="p-3"><img src={singleCoin.img} style={{width:'40px'}}/>{singleCoin.symbol}</td>
+                        <td className="p-3"><img src={singleCoin.img} style={{width:'40px'}}/><div>{singleCoin.symbol}</div></td>
                         <td className="p-3">{singleCoin.name}</td>
                         <td className="p-3">{CurrencyDude(singleCoin.price)}</td>
-                        <td className={singleCoin.marketCap < 0 ? 'text-light bg-danger ' : ' text-light bg-success'} 
+                        <td className="p-3">{CurrencyDude(singleCoin.marketCap1)}</td>
+
+                        <td className={singleCoin.marketCap < 0 ? 'text-light bg-danger p-1' : ' text-light bg-success p-0'} 
                         style={{width:'120px', border:'3px solid white'}}>
                         {singleCoin.marketCap < 0? <span><Icon.ArrowDownRight/></span>:<span><Icon.ArrowUpRight/></span>}
                         {singleCoin.marketCap >= 0 ? '+' + singleCoin.marketCap + '%' :singleCoin.marketCap + '%'}</td>

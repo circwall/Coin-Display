@@ -9,7 +9,9 @@ const Home = () => {
 
     return(
         <section className="container">
-           
+           <div>
+            
+           </div>
         </section>
     )
 }

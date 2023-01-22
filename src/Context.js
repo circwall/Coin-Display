@@ -27,9 +27,7 @@ const AppProvider =({ children })=>{
         setLoading(false)
        }).catch((error)=>{
         console.log(error)
-        return(
-            <div>foolish nework</div>
-        )
+        
        }) }
        
        ,[])
