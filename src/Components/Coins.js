@@ -52,12 +52,14 @@ const Coins = ()=>{
                 return (
                     
                     <tr className="tr" key={singleCoin.id}>
-                        <td>{singleCoin.rank}</td>
-                        <td className="td"><img src={singleCoin.img} style={{width:'40px'}}/>{singleCoin.symbol}</td>
+                        <td className="p-3">{singleCoin.rank}</td>
+                        <td className="p-3"><img src={singleCoin.img} style={{width:'40px'}}/>{singleCoin.symbol}</td>
                         <td className="p-3">{singleCoin.name}</td>
                         <td className="p-3">{CurrencyDude(singleCoin.price)}</td>
-                        <td className={singleCoin.marketCap < 0 ? 'text-danger ' : 'text-success'}>
-                        {singleCoin.marketCap < 0? <i><Icon.ArrowDownRight/></i>:<i><Icon.ArrowUpRight/></i>}{singleCoin.marketCap}%</td>
+                        <td className={singleCoin.marketCap < 0 ? 'text-light bg-danger ' : ' text-light bg-success'} 
+                        style={{width:'120px', border:'3px solid white'}}>
+                        {singleCoin.marketCap < 0? <span><Icon.ArrowDownRight/></span>:<span><Icon.ArrowUpRight/></span>}
+                        {singleCoin.marketCap >= 0 ? '+' + singleCoin.marketCap + '%' :singleCoin.marketCap + '%'}</td>
                     </tr>
                 )
                 })}

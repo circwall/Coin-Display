@@ -1,3 +1,6 @@
+
+
+ /* table style */
 table {
     width: 100%;
   }
@@ -15,6 +18,9 @@ table td{
 
 table :hover{
   cursor: pointer;
-  /* box-shadow: 0px .3px 0px .1px rgb(30, 29, 29); */
   background: rgba(48, 46, 46, 0.05);
 }
+
+
+
+/* end of table style */
