@@ -6,10 +6,12 @@ import CurrencyDude from "./CurrencyFormat";
 import * as Icon from 'react-bootstrap-icons';
 
 const Coins = ()=>{
-    const {coinsy,loading} =useGlobalcontext();
+    const allCoinsUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false';
+    const {coinsy,loading,setLoading,setNetworkError} =useGlobalcontext();
     const [maingee,setMaingee] = useState([]);
     useEffect(()=>{
-        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false').then((response)=>{
+        setLoading(true)
+        axios.get(allCoinsUrl).then((response)=>{
         console.log(response);
 
         
@@ -21,9 +23,10 @@ const Coins = ()=>{
 
         }})
         setMaingee(catcher)
+        setLoading(false)
     }).catch((error)=>{
         console.log(error)
-
+        setNetworkError(true)
             return(
                 <div>
                     please Check Network Connection
@@ -31,7 +34,14 @@ const Coins = ()=>{
             )
 
     })
-    },[])
+    },[]);
+    if(loading){
+        return(
+            <section className='loading-section container text-center pt-4'>
+                <div className='pt-5 content'><h4>Loading... <div className="spinner-border"></div></h4></div>
+            </section>
+        )
+    }
     
     
    
@@ -54,8 +64,9 @@ const Coins = ()=>{
                     
                     <tr className="tr" key={singleCoin.id}>
                         <td className="p-3">{singleCoin.rank}</td>
-                        <td className="p-3"><img src={singleCoin.img} style={{width:'40px'}}/><div>{singleCoin.symbol}</div></td>
+                        <td className="p-3 coiname"><img src={singleCoin.img} style={{width:'40px'}}/><span className=''>{singleCoin.symbol}</span></td>
                         <td className="p-3">{singleCoin.name}</td>
+                        {/* <td className="p-3">{singleCoin.name}</td> */}
                         <td className="p-3">{CurrencyDude(singleCoin.price)}</td>
                         <td className="p-3">{CurrencyDude(singleCoin.marketCap1)}</td>
 

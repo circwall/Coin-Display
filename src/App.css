@@ -1,6 +1,6 @@
 /* loading styles */
  .loading-section{
-  position: absolute;
+  /* position: absolute; */
   background:rgba(56, 54, 54, 0.1);
   top:20%;
   height: 80vh;
@@ -17,6 +17,7 @@
  /* table style */
 table {
     width: 100%;
+    font-size: smaller;
   }
 
 
@@ -35,6 +36,15 @@ table :hover{
   background: rgba(48, 46, 46, 0.05);
 }
 
-
+.coiname{
+  font-size: x-small;
+  display: flex;
+  font-weight: bolder;
+}
 
 /* end of table style */
+
+/* nav styes */
+.textnav{
+  color:white;
+}

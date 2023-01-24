@@ -2,7 +2,9 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import logo from '../images/Ch.png'
+import logo from '../images/Ch.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Navigation= ()=> {
   return (
@@ -12,7 +14,7 @@ const Navigation= ()=> {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link  href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Coins</Nav.Link>
             <NavDropdown title="Services" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Exchange</NavDropdown.Item>

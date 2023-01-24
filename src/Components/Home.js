@@ -1,5 +1,7 @@
 import React,{useState} from "react";
 import { useGlobalcontext } from '../Context'
+import TrendingCoins from './Trending';
+
 
 
 
@@ -10,7 +12,7 @@ const Home = () => {
     return(
         <section className="container">
            <div>
-            
+            <TrendingCoins/>
            </div>
         </section>
     )
