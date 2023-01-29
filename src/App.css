@@ -48,3 +48,32 @@ table :hover{
 .textnav{
   color:white;
 }
+/* end of nav style */
+
+/* trending style */
+
+.trending{
+display: flex;
+gap: 12px;
+/* overflow: scroll; */
+overflow-wrap: break-word;
+}
+/* .singletrend{
+  display: flex;
+} */
+
+/* end of .trending */
+
+
+/* errorpage */
+.errosect{
+  width: 100%;
+  margin-top: 70px;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 12em;
+}
+
+/* erropage end */

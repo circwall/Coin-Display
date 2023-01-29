@@ -24,30 +24,25 @@ const TrendingCoins = () =>{
         setLoading(false)
        }).catch((error)=>{
         console.log(error)
-        setNetworkError(true)
-        
-        return(
-            <div>
-                please Check Network Connection
-            </div>
-        )
+        setLoading(false)
+        setNetworkError(true);
        }) }
        
        ,[])
        if(loading){
         return(
-            <section className='loading-section container text-center pt-4'>
-                <div className='pt-5 content'><h4>Loading... <div className="spinner-border"></div></h4></div>
+            <section className='loading-section container text-center pt-4 mt-3'>
+                <div className=' content'><h4>Loading... <div className="spinner-grow"></div></h4></div>
             </section>
         )
     }
 
     return(
-        <section>
+        <section className="container pt-5 trending mt-5">
             {coinsy.map(singTrend=> {return(
-                <div key={singTrend.id}>
+                <table className="singletrend" key={singTrend.id}>
                     {singTrend.name}
-                </div>
+                </table>
             )})}
         </section>
     )

@@ -6,13 +6,15 @@ import Coins from './Components/Coins';
 import { BrowserRouter } from "react-router-dom";
 import Home from './Components/Home';
 import Navigation from './Components/Nav';
+import ErrorPagee from './Components/pages/ErrorPagee';
 function App() {
 
-  const {loading,networkError} = useGlobalcontext();
+  const {loading,networkError,maingee} = useGlobalcontext();
 
   
   return (
     <section>
+      {networkError && <ErrorPagee/>}
       <Navigation/>
       <Home/>
       <Coins/>

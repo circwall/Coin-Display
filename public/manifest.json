@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "Crypto Hunter",
   "name": "Create React App Sample",
   "icons": [
     {
@@ -13,7 +13,7 @@
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "Ch.png",
       "type": "image/png",
       "sizes": "512x512"
     }

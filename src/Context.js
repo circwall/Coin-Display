@@ -11,9 +11,16 @@ const trendingUrl = "https://api.coingecko.com/api/v3/search/trending"
 
 
 const AppProvider =({ children })=>{
+    const [maingee,setMaingee] = useState([]);
     const [coinsy, setCoins] = useState([]);
     const[loading, setLoading] = useState(false)
-    const [networkError, setNetworkError] = useState(false)
+    const [networkError, setNetworkError] = useState(false);
+    const[emptyGee,setEmptyGee] = useState(false)
+
+
+function checker(){
+    !maingee ? setEmptyGee(true) : setEmptyGee(false)
+}
 
     // useEffect(()=>{
     //     setLoading(true)
@@ -38,7 +45,7 @@ const AppProvider =({ children })=>{
 
 
     return(
-        <AppContext.Provider value={{networkError, setNetworkError,coinsy,loading,setCoins,setLoading,trendingUrl}}>
+        <AppContext.Provider value={{networkError, maingee,setMaingee, setNetworkError,coinsy,loading,setCoins,setLoading,trendingUrl}}>
             { children}
         </AppContext.Provider>
     )

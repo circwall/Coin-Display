@@ -4,11 +4,11 @@ import ReactTable from "react-table";
 import axios from "axios";
 import CurrencyDude from "./CurrencyFormat";
 import * as Icon from 'react-bootstrap-icons';
+import ErrorPagee from "./pages/ErrorPagee";
 
 const Coins = ()=>{
     const allCoinsUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false';
-    const {coinsy,loading,setLoading,setNetworkError} =useGlobalcontext();
-    const [maingee,setMaingee] = useState([]);
+    const {coinsy,loading,setLoading,setNetworkError,maingee,setMaingee} =useGlobalcontext();
     useEffect(()=>{
         setLoading(true)
         axios.get(allCoinsUrl).then((response)=>{
@@ -26,9 +26,10 @@ const Coins = ()=>{
         setLoading(false)
     }).catch((error)=>{
         console.log(error)
+        setLoading(false)
         setNetworkError(true)
             return(
-                <div>
+                <div className="pt-5 container mt-5">
                     please Check Network Connection
                 </div>
             )
@@ -37,8 +38,8 @@ const Coins = ()=>{
     },[]);
     if(loading){
         return(
-            <section className='loading-section container text-center pt-4'>
-                <div className='pt-5 content'><h4>Loading... <div className="spinner-border"></div></h4></div>
+            <section className='loading-section container text-center pt-4 mt-3'>
+                <div className=' content'><h4>Loading... <div className="spinner-grow"></div></h4></div>
             </section>
         )
     }
@@ -48,21 +49,23 @@ const Coins = ()=>{
 
     return(
         <section className="mt-5 pt-4 container">
-             
+             {!maingee && <ErrorPagee/>}
             <table className="table p-0">
+                {!maingee &&
                 <tr className="table-head">
-                    <th className="p-3">#</th>
-                    <th className="p-3">coin</th>
-                    <th className="p-3">name</th>
-                    <th className="p-3">price</th>
-                    <th>mkt Cap</th>
-                    <th>24h </th>
+                <th className="p-3">#</th>
+                <th className="p-3">coin</th>
+                <th className="p-3">name</th>
+                <th className="p-3">price</th>
+                <th>mkt Cap</th>
+                <th>24h </th>
 
-                </tr>
+            </tr>
+                }
                 {maingee.map((singleCoin) => {
                 return (
                     
-                    <tr className="tr" key={singleCoin.id}>
+                    <tr className="tr" id='tro' key={singleCoin.id}>
                         <td className="p-3">{singleCoin.rank}</td>
                         <td className="p-3 coiname"><img src={singleCoin.img} style={{width:'40px'}}/><span className=''>{singleCoin.symbol}</span></td>
                         <td className="p-3">{singleCoin.name}</td>
