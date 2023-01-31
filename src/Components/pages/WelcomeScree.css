@@ -1,0 +1,25 @@
+.welcomeScreenDiv{
+    height: 100vmax;
+    background: #0F1624;
+   }
+  .loading-progress{
+  border: 2px solid #e3e3e3 ;
+  }
+   .loadingComp{
+    border : 20px solid #1abc9c;
+    animation: loading-5 1.2s linear forwards 1.8s;
+   }
+
+   .welcomeScreenDiv h1{
+    color: whitesmoke;
+   }
+   @keyframes loading-5{
+    0%{
+        /* -webkit-transform: rotate(0deg); */
+        transform: translateY(2)
+    }
+    100%{
+        /* -webkit-transform: rotate(180deg); */
+  
+        transform: translateY(20)    }
+  }

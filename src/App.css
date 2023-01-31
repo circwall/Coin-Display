@@ -1,46 +1,16 @@
 /* loading styles */
- .loading-section{
-  /* position: absolute; */
-  background:rgba(56, 54, 54, 0.1);
-  top:20%;
-  height: 80vh;
- }
-
- .loading-section .content{
-  margin-top:200px ;
- }
-
+ 
+ 
  /* loading style end */
 
+ /* welcome screen */
+
+
+/* welcome page end */
 
 
  /* table style */
-table {
-    width: 100%;
-    font-size: smaller;
-  }
 
-
-.table-head{
-    width: 100%;
-    text-align: left;
-}
-
-table td{
-  border-top: .3px solid  rgba(64, 63, 63, 0.05);
-  border-bottom: .3px solid  rgba(64, 63, 63, 0.05);
-}
-
-table :hover{
-  cursor: pointer;
-  background: rgba(48, 46, 46, 0.05);
-}
-
-.coiname{
-  font-size: x-small;
-  display: flex;
-  font-weight: bolder;
-}
 
 /* end of table style */
 

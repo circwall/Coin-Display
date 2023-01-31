@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useGlobalcontext } from './Context'
-import Coins from './Components/Coins';
-import { BrowserRouter } from "react-router-dom";
-import Home from './Components/Home';
-import Navigation from './Components/Nav';
-import ErrorPagee from './Components/pages/ErrorPagee';
+import  {useState, React, useEffect} from "react";
+import Layout from './Components/Layout';
+import WelcomeScreen from './Components/pages/WelcomeScreen';
+
 function App() {
 
-  const {loading,networkError,maingee} = useGlobalcontext();
+  const [loadin, setLoadin] = useState(false);
 
+  useEffect(() => {
+    setLoadin(true);
+    const timer = setTimeout(() => {
+      setLoadin(false);
+    }, 1000);
+    return () => clearTimeout(timer)
+  }, []);
+
+  if(loadin){
+    return(
+     <WelcomeScreen/>
+    )
+  }
   
   return (
-    <section>
-      {networkError && <ErrorPagee/>}
-      <Navigation/>
-      <Home/>
-      <Coins/>
+    <section className='App'>
+        <Layout/>
     </section>
   );
 }

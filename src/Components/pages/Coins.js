@@ -1,10 +1,12 @@
 import React,{useEffect, useState} from "react";
-import { useGlobalcontext } from '../Context'
+import { useGlobalcontext } from '../../Context'
 import ReactTable from "react-table";  
+import Loading from "./Loading";
 import axios from "axios";
-import CurrencyDude from "./CurrencyFormat";
+import CurrencyDude from "../CurrencyFormat"
 import * as Icon from 'react-bootstrap-icons';
-import ErrorPagee from "./pages/ErrorPagee";
+import ErrorPagee from "./ErrorPagee";
+import './Coins.css'
 
 const Coins = ()=>{
     const allCoinsUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false';
@@ -27,20 +29,13 @@ const Coins = ()=>{
     }).catch((error)=>{
         console.log(error)
         setLoading(false)
-        setNetworkError(true)
-            return(
-                <div className="pt-5 container mt-5">
-                    please Check Network Connection
-                </div>
-            )
+        setNetworkError(true);
 
     })
     },[]);
     if(loading){
         return(
-            <section className='loading-section container text-center pt-4 mt-3'>
-                <div className=' content'><h4>Loading... <div className="spinner-grow"></div></h4></div>
-            </section>
+            <Loading/>
         )
     }
     
@@ -51,14 +46,14 @@ const Coins = ()=>{
         <section className="mt-5 pt-4 container">
              {!maingee && <ErrorPagee/>}
             <table className="table p-0">
-                {!maingee &&
+                {maingee &&
                 <tr className="table-head">
-                <th className="p-3">#</th>
-                <th className="p-3">coin</th>
-                <th className="p-3">name</th>
-                <th className="p-3">price</th>
-                <th>mkt Cap</th>
-                <th>24h </th>
+                    <th className="p-3">#</th>
+                    <th className="p-3">coin</th>
+                    <th className="p-3">name</th>
+                    <th className="p-3">price</th>
+                    <th>mkt Cap</th>
+                    <th>24h </th>
 
             </tr>
                 }

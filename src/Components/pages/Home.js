@@ -1,8 +1,7 @@
 import React,{useState} from "react";
-import { useGlobalcontext } from '../Context'
+import { useGlobalcontext } from '../../Context'
 import TrendingCoins from './Trending';
-
-
+import Coins from './Coins';
 
 
 
@@ -11,9 +10,8 @@ const Home = () => {
 
     return(
         <section className="container">
-           <div>
             <TrendingCoins/>
-           </div>
+            <Coins/>
         </section>
     )
 }

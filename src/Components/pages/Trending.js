@@ -1,10 +1,11 @@
 import React,{useEffect, useState} from "react";
-import { useGlobalcontext } from '../Context'
+import { useGlobalcontext } from "../../Context";
+import Loading from "./Loading";
 import ReactTable from "react-table";  
 import axios from "axios";
-import CurrencyDude from "./CurrencyFormat";
+import CurrencyDude from "../CurrencyFormat";
 import * as Icon from 'react-bootstrap-icons';
-import Coins from "./Coins";
+// import Coins from "./Coins";
 
 
 const TrendingCoins = () =>{
@@ -20,7 +21,7 @@ const TrendingCoins = () =>{
             symbol:coin.item.symbol, price:coin.item.price_btc,
             image:coin.item.thumb}})
             setCoins(Coinsey)
-        console.log(coinsy)
+        // console.log(respo)
         setLoading(false)
        }).catch((error)=>{
         console.log(error)
@@ -31,9 +32,7 @@ const TrendingCoins = () =>{
        ,[])
        if(loading){
         return(
-            <section className='loading-section container text-center pt-4 mt-3'>
-                <div className=' content'><h4>Loading... <div className="spinner-grow"></div></h4></div>
-            </section>
+            <Loading/>
         )
     }
 
