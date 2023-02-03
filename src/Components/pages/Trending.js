@@ -5,6 +5,9 @@ import ReactTable from "react-table";
 import axios from "axios";
 import CurrencyDude from "../CurrencyFormat";
 import * as Icon from 'react-bootstrap-icons';
+import Button from 'react-bootstrap/Button';
+import './Trending.css'
+
 // import Coins from "./Coins";
 
 
@@ -21,7 +24,7 @@ const TrendingCoins = () =>{
             symbol:coin.item.symbol, price:coin.item.price_btc,
             image:coin.item.thumb}})
             setCoins(Coinsey)
-        // console.log(respo)
+        console.log(response.data)
         setLoading(false)
        }).catch((error)=>{
         console.log(error)
@@ -37,12 +40,16 @@ const TrendingCoins = () =>{
     }
 
     return(
-        <section className="container pt-5 trending mt-5">
-            {coinsy.map(singTrend=> {return(
-                <table className="singletrend" key={singTrend.id}>
-                    {singTrend.name}
-                </table>
-            )})}
+        <section className="container trending p-3 ">
+            <h1 >Trending <Icon.Fire className="text-danger"/></h1>
+            <div className="trendList text-center" >
+                {coinsy.map(singTrend=> {return(
+                    <div className="singletrend" key={singTrend.id}>
+                        <Button className='bg-success btnG'>{singTrend.name} <span><img src={singTrend.image}/></span></Button>
+                        
+                    </div>
+                )})}
+            </div>
         </section>
     )
 }

@@ -4,18 +4,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../images/Ch.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from './pages/Home';
+import Coins from './pages/Coins';
+import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
+
 
 
 const Navigation= ()=> {
   return (
     <Navbar  fixed="top"  bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home"><img style={{width:'60px'}} src={logo}/>Hunter</Navbar.Brand>
+        <Navbar.Brand href="#home"><img style={{width:'60px'}} src={logo}/><Link className='Link' to='/'>Hunter</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link  href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Coins</Nav.Link>
+            <Nav.Link><Link className="Link" to='/Coins'>Coins</Link></Nav.Link>
             <NavDropdown title="Services" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Exchange</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -24,7 +28,7 @@ const Navigation= ()=> {
               <NavDropdown.Item href="#action/3.3"></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                Separated link
+                Contact us
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

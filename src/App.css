@@ -9,10 +9,19 @@
 /* welcome page end */
 
 
- /* table style */
+ /* Link style */
+.Link{
+  text-decoration: none;
+  color: rgb(97, 95, 95);
+}
+
+.Link :hover{
+  color: rgb(97, 95, 95);
+
+}
 
 
-/* end of table style */
+/* end of Link style */
 
 /* nav styes */
 .textnav{
@@ -22,12 +31,7 @@
 
 /* trending style */
 
-.trending{
-display: flex;
-gap: 12px;
-/* overflow: scroll; */
-overflow-wrap: break-word;
-}
+
 /* .singletrend{
   display: flex;
 } */

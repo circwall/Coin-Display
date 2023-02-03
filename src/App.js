@@ -12,7 +12,7 @@ function App() {
     setLoadin(true);
     const timer = setTimeout(() => {
       setLoadin(false);
-    }, 1000);
+    }, 4000);
     return () => clearTimeout(timer)
   }, []);
 

@@ -9,7 +9,7 @@
   }
   .loader-wrapper {
     width: 100%;
-    height: 100%;
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -26,10 +26,17 @@
     height: 140px;
     animation: spin 2s linear infinite;
   }
-  
+  .loading-section p{
+    /* margin-bottom: -12em; */
+    top:7em;
+    left: 13em;
+    position: absolute;
+    color: white;
+    background: black;
+  }
   @keyframes spin {
     0% {
-      transform: rotate(0deg);
+      transform: rotate(0deg); 
     }
   
     100% {

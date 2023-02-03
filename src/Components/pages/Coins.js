@@ -1,11 +1,12 @@
 import React,{useEffect, useState} from "react";
 import { useGlobalcontext } from '../../Context'
-import ReactTable from "react-table";  
 import Loading from "./Loading";
 import axios from "axios";
 import CurrencyDude from "../CurrencyFormat"
 import * as Icon from 'react-bootstrap-icons';
 import ErrorPagee from "./ErrorPagee";
+import Table from 'react-bootstrap/Table';
+import "skeleton-screen-css";
 import './Coins.css'
 
 const Coins = ()=>{
@@ -43,44 +44,46 @@ const Coins = ()=>{
    
 
     return(
-        <section className="mt-5 pt-4 container">
+        <section className="pt-4 container">
              {!maingee && <ErrorPagee/>}
-            <table className="table p-0">
+            <Table className="table p-0"  hover variant="" responsive>
                 {maingee &&
-                <tr className="table-head">
-                    <th className="p-3">#</th>
-                    <th className="p-3">coin</th>
-                    <th className="p-3">name</th>
-                    <th className="p-3">price</th>
-                    <th>mkt Cap</th>
-                    <th>24h </th>
-
-            </tr>
+                    <thead>
+                        <tr className="">
+                            <th className="p-3">#</th>
+                            <th className="p-3">coin</th>
+                            <th className="p-3">name</th>
+                            <th className="p-3">price</th>
+                            <th>mkt Cap</th>
+                            <th>24h </th>
+                        </tr>
+                    </thead>
                 }
                 {maingee.map((singleCoin) => {
                 return (
-                    
-                    <tr className="tr" id='tro' key={singleCoin.id}>
-                        <td className="p-3">{singleCoin.rank}</td>
-                        <td className="p-3 coiname"><img src={singleCoin.img} style={{width:'40px'}}/><span className=''>{singleCoin.symbol}</span></td>
-                        <td className="p-3">{singleCoin.name}</td>
-                        {/* <td className="p-3">{singleCoin.name}</td> */}
-                        <td className="p-3">{CurrencyDude(singleCoin.price)}</td>
-                        <td className="p-3">{CurrencyDude(singleCoin.marketCap1)}</td>
+                    <tbody>
+                        <tr className="tr" id='tro' key={singleCoin.id}>
+                            <td className="p-3" key={singleCoin.rank}>{singleCoin.rank}</td>
+                            <td className="p-3 coiname" key={singleCoin.img}><img src={singleCoin.img} style={{width:'40px'}}/><span className=''>{singleCoin.symbol}</span></td>
+                            <td className="p-3" key={singleCoin.name}>{singleCoin.name}</td>
+                            {/* <td className="p-3">{singleCoin.name}</td> */}
+                            <td className="p-3" key={singleCoin.price}>{CurrencyDude(singleCoin.price)}</td>
+                            <td className="p-3" key={singleCoin.marketcap1}>{CurrencyDude(singleCoin.marketCap1)}</td>
 
-                        <td className={singleCoin.marketCap < 0 ? 'text-light bg-danger p-1' : ' text-light bg-success p-0'} 
-                        style={{width:'120px', border:'3px solid white'}}>
-                        {singleCoin.marketCap < 0? <span><Icon.ArrowDownRight/></span>:<span><Icon.ArrowUpRight/></span>}
-                        {singleCoin.marketCap >= 0 ? '+' + singleCoin.marketCap + '%' :singleCoin.marketCap + '%'}</td>
-                    </tr>
+                            <td key={singleCoin.marketCap} className={singleCoin.marketCap < 0 ? 'text-light bg-danger p-1' : ' text-light bg-success p-0'} 
+                            style={{width:'120px', border:'3px solid white'}}>
+                            {singleCoin.marketCap < 0? <span key='icon.arrowdown'><Icon.ArrowDownRight/></span>:<span><Icon.ArrowUpRight/></span>}
+                            {singleCoin.marketCap >= 0 ? '+' + singleCoin.marketCap + '%' :singleCoin.marketCap + '%'}</td>
+                        </tr>
+                    </tbody>
                 )
                 })}
 
-            </table>
-
+            </Table>
         </section>
     )
 }
 
 
-export default Coins
+export default Coins;
+

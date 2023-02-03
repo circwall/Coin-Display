@@ -1,5 +1,6 @@
 .welcomeScreenDiv{
-    height: 100vmax;
+    padding-top: 30%;
+    height:100vh;
     background: #0F1624;
    }
   .loading-progress{
@@ -9,17 +10,28 @@
     border : 20px solid #1abc9c;
     animation: loading-5 1.2s linear forwards 1.8s;
    }
-
+   .welcomeScreenDiv img{
+    animation:loading-5 .7s linear  infinite alternate-reverse forwards;
+   }
    .welcomeScreenDiv h1{
     color: whitesmoke;
    }
+
    @keyframes loading-5{
     0%{
         /* -webkit-transform: rotate(0deg); */
-        transform: translateY(2)
+        transform: scale(1)
     }
     100%{
         /* -webkit-transform: rotate(180deg); */
   
-        transform: translateY(20)    }
+        transform: scale(.4)    }
   }
+
+  @media only screen and (min-width: 768px){
+    .welcomeScreenDiv{
+        padding-top: 0;
+    }
+  }
+
+  
