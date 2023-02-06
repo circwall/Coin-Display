@@ -1,6 +1,8 @@
 .trending{
     gap: 12px;
     overflow-wrap: break-word;
+    background: var(---darkTheme);
+    /* margin: 0px 15px; */
 }
 
 .trendList{
@@ -13,7 +15,6 @@
 ::-webkit-scrollbar {
     width: 10px;
   }
-
-  .btnG{
-    border: none;
+  .btnG :hover{
+    cursor: pointer;
   }

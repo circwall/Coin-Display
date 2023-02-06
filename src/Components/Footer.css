@@ -1,0 +1,44 @@
+footer{
+    background: var(---darkTheme);
+    width: 100%;
+}
+.logoSie {
+    display: flex;
+    align-items: center;
+}
+
+footer img{
+    width: 15%;
+}
+.divleft p{
+    text-align: justify;
+    font-size: small;
+}
+
+@media only screen and (min-width: 768px){
+    footer img{
+        width: 10%;
+    }
+
+    .footerDiv{
+        display: flex;
+    }
+
+    
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+footer a:hover{
+    color: aliceblue;
+    font-weight: bold;
+}
+
+
+

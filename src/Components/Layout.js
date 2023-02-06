@@ -2,6 +2,7 @@ import React from 'react'
 import Navigation from "../Components/Nav"
 import RouterP from "../Components/Router";
 import { useGlobalcontext } from '../Context';
+import Footer from './Footer';
 import ErrorPagee from './pages/ErrorPagee';
 
 
@@ -11,8 +12,9 @@ const Layout = () => {
   return (
     <div>
         <Navigation />
-        {networkError && <ErrorPagee/>}
         <RouterP />
+        {networkError && <ErrorPagee/>}
+        <Footer/>
     </div>
   )
 }

@@ -1,12 +1,6 @@
-/* loading styles */
- 
- 
- /* loading style end */
-
- /* welcome screen */
-
-
-/* welcome page end */
+:root{
+  ---darkTheme:#0F1624;
+}
 
 
  /* Link style */
@@ -20,6 +14,18 @@
 
 }
 
+
+.App{
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+/* ::-webkit-scrollbar-thumb {
+  background: var(---darkTheme);
+  border-radius: 10px;
+} */
 
 /* end of Link style */
 
@@ -42,12 +48,9 @@
 /* errorpage */
 .errosect{
   width: 100%;
-  margin-top: 70px;
   height: 50vh;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 12em;
 }
 
 /* erropage end */

@@ -14,7 +14,7 @@ const Navigation= ()=> {
   return (
     <Navbar  fixed="top"  bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home"><img style={{width:'60px'}} src={logo}/><Link className='Link' to='/'>Hunter</Link></Navbar.Brand>
+        <Navbar.Brand href="#home"><img style={{width:'60px'}} src={logo}/>Hunter</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -25,7 +25,7 @@ const Navigation= ()=> {
               <NavDropdown.Item href="#action/3.2">
                 Defi
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3"></NavDropdown.Item>
+              <NavDropdown.Item href="#footer">Bottom</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Contact us

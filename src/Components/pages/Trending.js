@@ -6,7 +6,8 @@ import axios from "axios";
 import CurrencyDude from "../CurrencyFormat";
 import * as Icon from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/Button';
-import './Trending.css'
+import './Trending.css';
+import TrendinngCroussal from "../TrendinngCroussal";
 
 // import Coins from "./Coins";
 
@@ -40,16 +41,10 @@ const TrendingCoins = () =>{
     }
 
     return(
-        <section className="container trending p-3 ">
-            <h1 >Trending <Icon.Fire className="text-danger"/></h1>
-            <div className="trendList text-center" >
-                {coinsy.map(singTrend=> {return(
-                    <div className="singletrend" key={singTrend.id}>
-                        <Button className='bg-success btnG'>{singTrend.name} <span><img src={singTrend.image}/></span></Button>
-                        
-                    </div>
-                )})}
-            </div>
+        <section className=" trending p-3 ">
+            <h1 className="text-center text-light" >Trending <Icon.Fire className="text-danger"/></h1>
+            
+            <TrendinngCroussal/>
         </section>
     )
 }

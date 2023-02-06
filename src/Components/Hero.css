@@ -1,3 +1,5 @@
+
+
 .herosection{
     /* background: #0F1624; */
     overflow: hidden;
@@ -11,7 +13,7 @@
     padding: 20px;    
 }
 .imageDiv img{
-    width: 200px;
+    width: 170px;
     margin:-50px ;
     padding: -50px;
 }
@@ -20,10 +22,10 @@
     animation:bounce 4s linear  infinite alternate-reverse forwards;
 } */
 .img1{
-    animation:bounce2 4s linear  infinite alternate-reverse forwards;
+    animation:bounce2 6s linear  infinite alternate-reverse forwards;
 }
 .img2{
-    animation:bounce3 6s linear  infinite alternate-reverse forwards;
+    animation:bounce3 5s linear  infinite alternate-reverse forwards;
 
 }
 

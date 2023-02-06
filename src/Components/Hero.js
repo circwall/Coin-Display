@@ -24,7 +24,7 @@ const Hero = () => {
     <section className='herosection pt-5 mt-5'>
        <div className='heroDiv '>
             <div className='imageDiv text-center'>
-                <img className='img1' src={Btc}/>
+                <img className='img1 pb-4' src={Btc}/>
                 <img className='img2' src={Eth}/>
                 <img className='img3' src={usd}/>
             </div>
@@ -33,4 +33,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;
