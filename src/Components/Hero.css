@@ -4,17 +4,23 @@
     /* background: #0F1624; */
     overflow: hidden;
     /* background-image:linear-gradient(to right,#002785,#0F1624 ); */
-    background-image:radial-gradient(#072467 .1% ,#0F1624 99.9%);
+    /* background-image:radial-gradient(#072467 .1% ,#0F1624 99.9%); */
+    background: url('file:///C:/Users/User/Documents/Desktop/html%20files/react%20files/shopping%20apps/weather/src/Components/354e9ac4a8c19119ea1c3d3fecf7a9cf.gif');
 }
 
 
 .imageDiv{
     align-items: center;
-    padding: 20px;    
+    padding: 10px ; 
+    padding-top: 20px; 
+    margin-bottom: -350px;  
+    opacity: 70%;
+    z-index: -1;
+    
 }
 .imageDiv img{
-    width: 170px;
-    margin:-50px ;
+    width: 190px;
+    margin:-20px ;
     padding: -50px;
 }
 
@@ -34,6 +40,7 @@
     box-shadow: black;
 
 }
+
 @keyframes bounce{
     0%{
         /* -webkit-transform: rotate(0deg); */

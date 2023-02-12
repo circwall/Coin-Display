@@ -1,0 +1,16 @@
+.options{
+    background: url('file:///C:/Users/User/Documents/Desktop/html%20files/react%20files/shopping%20apps/weather/src/Components/354e9ac4a8c19119ea1c3d3fecf7a9cf.gif');
+    position: fixed;
+    z-index: 999;
+    top:23em;
+}
+
+.spanIcons{
+    border-radius: 80px;
+    background-color: #D9B160;
+    color:#0F1624
+}
+
+.spanIcons:hover{
+    transform: scale(.8);
+}

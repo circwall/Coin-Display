@@ -1,7 +1,7 @@
 .trending{
     gap: 12px;
     overflow-wrap: break-word;
-    background: var(---darkTheme);
+    background: black;
     /* margin: 0px 15px; */
 }
 
@@ -18,3 +18,15 @@
   .btnG :hover{
     cursor: pointer;
   }
+.carouselCap{
+  margin-top: 4.5em;
+  
+}
+
+.itemImg{
+  width:100px;
+}
+
+.trender{
+  padding-bottom: -120px;
+}

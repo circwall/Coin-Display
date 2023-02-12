@@ -7,7 +7,7 @@ const LoaderBar = () => {
 useEffect(()=>{
   const timer  = setTimeout(() => {
     setPercent(perCent+25);
-  }, 1000);
+  }, 500);
 },[perCent])
   return (
     <div className="text-light text-center">

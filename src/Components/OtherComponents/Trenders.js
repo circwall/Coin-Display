@@ -1,20 +1,12 @@
 import React,{useEffect, useState} from "react";
-import { useGlobalcontext } from "../../Context";
-import Loading from "./Loading";
-import ReactTable from "react-table";  
+import { useGlobalcontext } from '../../Context'; 
+import Loading from '../pages/Loading'; 
 import axios from "axios";
-import CurrencyDude from "../CurrencyFormat";
 import * as Icon from 'react-bootstrap-icons';
-// import Button from 'react-bootstrap/Button';
-import './Trending.css';
-
-import Table from 'react-bootstrap/Table';
-
-
-
-
-const TrendingCoins = () =>{
-
+import Button from 'react-bootstrap/Button';
+import CurrencyDude from "../CurrencyFormat";
+import Carousel from 'react-bootstrap/Carousel';
+const Trenders = () => {
     const {trendingUrl,setLoading,coinsy,setCoins,loading,setNetworkError} = useGlobalcontext();
 
     useEffect(()=>{
@@ -27,7 +19,7 @@ const TrendingCoins = () =>{
             symbol:coin.item.symbol, price:coin.item.price_btc,
             image:coin.item.thumb,lgim:coin.item.large}})
             setCoins(Coinsey)
-        console.log(response.data)
+        
         setLoading(false)
        }).catch((error)=>{
         console.log(error)
@@ -43,18 +35,23 @@ const TrendingCoins = () =>{
     }
 
     return(
-        <section className=" trending p-5 my-5 ">
-            <h1 className="text-center text-light" >Trending <Icon.Fire className="text-danger"/></h1>
-            <h3 className="text-center text-light">Top 7 Searched Coins from coingecko data</h3>
-            {coinsy.map(trendCoin=>{return(
-                <Table>
-                    <thead>
-                        <tr></tr>
-                    </thead>
-                </Table>
+        <section >
+            <Carousel >
+                
+            {coinsy.map(trend=>{return(
+                
+                    
+                        <Carousel.Item key={trend.lgim} className='text-center trender'>
+                            
+                            <img className='itemImg' src={trend.lgim}/>
+                            <div className="carouselCap"><Carousel.Caption>{trend.name}</Carousel.Caption></div>
+                        </Carousel.Item>
+                    
             )})}
+            </Carousel>
         </section>
     )
 }
 
-export default TrendingCoins;
+
+export default Trenders

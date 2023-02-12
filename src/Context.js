@@ -7,7 +7,7 @@ import axios from 'axios'
 
 const AppContext = React.createContext()
 
-const trendingUrl = "https://api.coingecko.com/api/v3/search/trending"
+const trendingUrl = "https://api.coingecko.com/api/v3/search/trending";
 const global ='';
 
 const AppProvider =({ children })=>{

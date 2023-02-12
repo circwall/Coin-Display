@@ -14,12 +14,12 @@ const Navigation= ()=> {
   return (
     <Navbar  fixed="top"  bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home"><img style={{width:'60px'}} src={logo}/>Hunter</Navbar.Brand>
+        <Navbar.Brand href="/"><img style={{width:'60px'}} src={logo}/>Hunter</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link  href="#home">Home</Nav.Link>
-            <Nav.Link><Link className="Link" to='/Coins'>Coins</Link></Nav.Link>
+            <Nav.Link href='/Coins'>Coins</Nav.Link>
             <NavDropdown title="Services" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Exchange</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

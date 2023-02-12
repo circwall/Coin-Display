@@ -5,6 +5,7 @@ import TrendingCoins from './pages/Trending';
 import Coins from './pages/Coins';
 
 
+
 const RouterP = () => {
   return (
     <Routes>

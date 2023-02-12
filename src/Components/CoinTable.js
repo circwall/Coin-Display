@@ -26,7 +26,7 @@ const CoinTable = () => {
                 {maingee.map((singleCoin) => {
                 return (
                     <tbody key={singleCoin.id}>
-                        <tr className="tr" id='tro' key={singleCoin.id}>
+                        <tr className="tr" id='tro' >
                             <td className="p-3" key={singleCoin.rank}>{singleCoin.rank}</td>
                             <td className="p-3 coiname" key={singleCoin.img}><img src={singleCoin.img} style={{width:'40px'}}/><span className=''>{singleCoin.symbol}</span></td>
                             <td className="p-3" key={singleCoin.name}>{singleCoin.name}</td>
@@ -40,9 +40,8 @@ const CoinTable = () => {
                             {singleCoin.marketCap >= 0 ? '+' + singleCoin.marketCap + '%' :singleCoin.marketCap + '%'}</td>
                         </tr>
                     </tbody>
-                )
+                ) 
                 })}
-
             </Table>
   )
 }

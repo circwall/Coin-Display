@@ -5,7 +5,7 @@ import Coins from './Coins';
 import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
 import Hero from "../Hero";
 import Search from "../Search";
-
+import Options from "../OtherComponents/Options";
 
 
 const Home = () => {
@@ -14,10 +14,8 @@ const Home = () => {
 
     return(
         <section id='home'>
-            {/* {networkError && } */}
             <Hero />
-            <Search/>
-            <TrendingCoins/>
+            {/* <Search/> */}
             <Coins/>
         </section>
     )

@@ -1,8 +1,13 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
+import { useGlobalcontext } from "../Context";
+import axios from "axios";
 
-
-
-
-export default function CurrencyDude (num){
+function CurrencyDude (num){
     return '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
+
+
+export default CurrencyDude
+
+       
+    

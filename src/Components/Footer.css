@@ -1,6 +1,7 @@
 footer{
     background: var(---darkTheme);
     width: 100%;
+    margin: 0 ;
 }
 .logoSie {
     display: flex;
@@ -40,5 +41,10 @@ footer a:hover{
     font-weight: bold;
 }
 
+/* contacts */
 
+.icons .icone{
+    margin:  0 3px;
+}
 
+/* contactsEnd */

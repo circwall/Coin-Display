@@ -12,7 +12,7 @@ const Footer = () => {
         <div className='container'>
           <div className='logoSie text-light container'>
             <img src={logo} />
-            <h1>CryptoHunter</h1>
+            <h1>CoinHunter</h1>
           </div>
           <hr className='text-light '/>
         <div className='footerDiv '>
