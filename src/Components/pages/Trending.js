@@ -5,10 +5,9 @@ import ReactTable from "react-table";
 import axios from "axios";
 import CurrencyDude from "../CurrencyFormat";
 import * as Icon from 'react-bootstrap-icons';
-// import Button from 'react-bootstrap/Button';
 import './Trending.css';
-
 import Table from 'react-bootstrap/Table';
+
 
 
 
@@ -44,15 +43,32 @@ const TrendingCoins = () =>{
 
     return(
         <section className=" trending p-5 my-5 ">
-            <h1 className="text-center text-light" >Trending <Icon.Fire className="text-danger"/></h1>
-            <h3 className="text-center text-light">Top 7 Searched Coins from coingecko data</h3>
-            {coinsy.map(trendCoin=>{return(
-                <Table>
-                    <thead>
-                        <tr></tr>
-                    </thead>
-                </Table>
-            )})}
+            <h1 className="text-center " >Trending <Icon.Fire className="text-danger fire"/></h1>
+            <h3 className="text-center ">Top 7 Searched Coins </h3>
+            <Table  hover variant="" responsive className="">
+            <thead>
+               <tr>
+                    <th>#</th>
+                    <th>coin</th>
+                    <th>name</th>
+                    <th>price (Btc)</th>
+                    {/* <th>price(USD)</th> */}
+               </tr>
+            </thead>
+                {coinsy.map(trendCoin=>{return(
+                    <tbody >
+                        <tr key={trendCoin.name} title={trendCoin.name}>
+                            <td key={trendCoin.marketCap}>
+                                {trendCoin.marketCap}
+                            </td>
+                            <td key={trendCoin.image}><img src={trendCoin.image}/><div className="">{trendCoin.symbol}</div></td>
+                            <td key={trendCoin.symbol}>{trendCoin.name}</td>
+                            <td key={trendCoin.price}>{trendCoin.price.toFixed(16)}</td>
+                        </tr>                        
+                    </tbody>
+                )})}
+            </Table>
+
         </section>
     )
 }

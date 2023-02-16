@@ -1,7 +1,7 @@
 .trending{
     gap: 12px;
     overflow-wrap: break-word;
-    background: black;
+    /* background: black; */
     /* margin: 0px 15px; */
 }
 
@@ -29,4 +29,54 @@
 
 .trender{
   padding-bottom: -120px;
+}
+.fire{
+  animation:bounce 6s linear  infinite alternate-reverse forwards;
+}
+td{
+  align-items: center;
+  justify-content: center;
+}
+@keyframes bounce{
+  0%{
+      /* -webkit-transform: rotate(0deg); */
+      transform: translateY(-3px);
+      transform:rotate(15deg);
+      /* transform: translateX(-5px); */
+  }
+  100%{
+      /* -webkit-transform: rotate(180deg); */
+      transform: rotate(35deg);
+      transform: translateY(5px);
+      /* transform: translateX(5px); */
+      }
+}
+
+@keyframes bounce2{
+  0%{
+      /* -webkit-transform: rotate(0deg); */
+      transform: translateX(-5px);
+      transform:rotate(15deg);
+      transform: scale(1);
+  }
+  100%{
+      /* -webkit-transform: rotate(35deg); */
+      transform: rotate(-35deg);
+      transform: translateX(5px);
+      transform: scale(1.5);
+      }
+}
+@keyframes bounce3{
+  0%{
+      /* -webkit-transform: rotate(0deg); */
+      transform: translateX(-5px);
+      transform:rotate(15deg);
+      /* transform: translateX(-5px); */
+  }
+  100%{
+      /* -webkit-transform: rotate(180deg); */
+      transform: rotate(350deg);
+      transform: translateX(7px);
+      /* transform: translateX(5px); */
+      }
 }

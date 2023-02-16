@@ -15,8 +15,8 @@ const Options = () => {
             link:'/Exchanges'
         },
         {
-            name:'Defi',
-            link: '/Defi'
+            name:'Nfts',
+            link: '/Nfts'
         },
         {
             name:'Coins',
@@ -27,7 +27,7 @@ const Options = () => {
     <section className=' options' >
         <div className='text-center p-2'> 
         {options.map(links=>{return(
-            <Link key={links.name} className='mx-3' to={links.link}>{links.name}</Link>
+            <Link key={links.name} className='mx-3 text-light Link' to={links.link}>{links.name}</Link>
         )})}
         <span className='text-success'><a href='#footer'><Icon.ArrowDown className='spanIcons '/></a><a href='#home'><Icon.ArrowUp className=' spanIcons'/></a></span>
         </div>

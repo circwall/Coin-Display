@@ -4,7 +4,6 @@ import Eth from '../images/eth.png';
 import usd from '../images/usd.png';
 import './Hero.css';
 import Trenders from './OtherComponents/Trenders';
-import Converter from './OtherComponents/Btconverter';
 const Hero = () => {
     const imagei =[Btc,Eth,usd]
     const images =[
@@ -31,7 +30,6 @@ const Hero = () => {
             </div>            
        </div>
         <Trenders/>
-        <Converter/>
     </section>
   )
 }

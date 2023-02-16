@@ -3,6 +3,8 @@
     position: fixed;
     z-index: 999;
     top:23em;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .spanIcons{
@@ -14,3 +16,4 @@
 .spanIcons:hover{
     transform: scale(.8);
 }
+
