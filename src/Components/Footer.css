@@ -23,8 +23,12 @@ footer img{
 
     .footerDiv{
         display: flex;
+        gap: 14px;
     }
 
+    .formElement{
+        width: 75%;
+    }
     
 }
 a{
@@ -44,7 +48,10 @@ footer a:hover{
 /* contacts */
 
 .icons .icone{
-    margin:  0 3px;
+    margin:  0 4px;
 }
 
 /* contactsEnd */
+
+
+/* formSide */

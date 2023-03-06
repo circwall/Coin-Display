@@ -26,7 +26,6 @@ const Resource = () => {
         }
     ]
   return (
-    <div>
         <ul>
             <h4 className='text-light'>Resources</h4>
             {resources.map(resource=>{
@@ -34,7 +33,7 @@ const Resource = () => {
             <li key={resource.link}><a href={resource.link}>{resource.name}</a></li>
             )})};
         </ul>
-    </div>
+
   )
 }
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
 import './Options.css';
-import * as Icon from 'react-bootstrap-icons';
 
 
 const Options = () => {
@@ -25,11 +24,12 @@ const Options = () => {
     ]
   return (
     <section className=' options' >
-        <div className='text-center p-2'> 
+        <div className='text-left p-2'> 
+        <hr/>
         {options.map(links=>{return(
-            <Link key={links.name} className='mx-3 text-light Link' to={links.link}>{links.name}</Link>
+            <Link key={links.name} className='mx-4 text-dark Link delink' to={links.link}>{links.name}</Link>
         )})}
-        <span className='text-success'><a href='#footer'><Icon.ArrowDown className='spanIcons '/></a><a href='#home'><Icon.ArrowUp className=' spanIcons'/></a></span>
+        <hr/>
         </div>
     </section>
   )

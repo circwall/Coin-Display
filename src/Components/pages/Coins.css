@@ -12,6 +12,9 @@ table {
 table td{
   border-top: .3px solid  rgba(64, 63, 63, 0.05);
   border-bottom: .3px solid  rgba(64, 63, 63, 0.05);
+  justify-content: center;
+  align-items: center;
+  padding-bottom: -12px;
 }
 
 table :hover{
@@ -21,7 +24,7 @@ table :hover{
 
 .coiname{
   font-size: x-small;
-  display: flex;
   font-weight: bolder;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
 }

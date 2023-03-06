@@ -11,7 +11,7 @@
     animation: loading-5 1.2s linear forwards 1.8s;
    }
    .welcomeScreenDiv img{
-    animation:loading-5 .7s linear  infinite alternate-reverse forwards;
+    /* animation:loading-5 .7s linear  infinite alternate-reverse forwards; */
    }
    .welcomeScreenDiv h1{
     color: whitesmoke;

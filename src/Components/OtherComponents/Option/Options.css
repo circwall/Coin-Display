@@ -1,0 +1,32 @@
+.options{
+    font-size:larger ;
+    font-weight: bolder;
+}
+
+
+/* movement */
+.spanIcons{
+    font-size: larger;
+    border-radius: 80px;
+    background-color: #D9B160;
+    color:#0F1624
+}
+.spanIcons:hover{
+    transform: scale(.8);
+}
+
+.movement{
+    position: fixed;
+    top: 35em;
+    left:79em;
+}
+@media only screen and (max-width: 768px){
+    .movement{
+        position: fixed;
+        top: 35em;
+        left:29em;
+    }
+    
+}
+/* movement ends */
+

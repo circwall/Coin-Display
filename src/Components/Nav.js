@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
 
 const Navigation= ()=> {
   return (
-    <Navbar  fixed="top"  bg="light" expand="lg">
+    <Navbar fixed="top"  bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/"><img style={{width:'60px'}} src={logo}/>Hunter</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

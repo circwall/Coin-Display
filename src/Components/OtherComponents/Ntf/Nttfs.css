@@ -1,0 +1,10 @@
+
+
+.table-text{
+    text-align: left;
+    font-size: large;
+}
+
+.table-text th,td{
+    text-align: left;
+}

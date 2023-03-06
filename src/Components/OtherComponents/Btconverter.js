@@ -1,52 +1,36 @@
-// import axios from "axios";
-// import {React,useEffect,useState} from 'react';
-// import { useGlobalcontext } from "../../Context";
-// function Converter(coin){
-// const allCoinsUrl = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false';
+import React, { useState } from 'react';
+import { useGlobalcontext } from '../../Context';
+function BitcoinToUSD() {
+  const [bitcoinValue, setBitcoinValue] = useState('');
+  const [usdValue, setUSDValue] = useState('');
 
-//     const {coinsy,loading,setLoading,setNetworkError,maingee,setMaingee} =useGlobalcontext();
-//     const [price,setPrice] =useState([]);
-//     const [tPrice, setThePrice] =useState()
-//     let bvc =[]
-//     useEffect(()=>{
-//         axios.get(allCoinsUrl).then((response)=>{   
-        
-//         const catcher = response.data.map(eachcoin=>{return{
-//             id:eachcoin.id,name:eachcoin.name,img:eachcoin.image,symbol:eachcoin.symbol,
-//             pric:eachcoin.current_price,marketCap:eachcoin.market_cap_change_percentage_24h,
-//             rank:eachcoin.market_cap_rank,marketCap1:eachcoin.market_cap
+  const{setRates}= useGlobalcontext()
 
-//         }})
-//         setPrice(catcher)
-//         setLoading(false)
-//     }).catch((error)=>{
-//         console.log(error)
-    
+  const convertToUSD = async () => {
+    try {
+      const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json');
+      const data = await response.json();
+      const rate = data.bpi.USD.rate_float;
+      const usd = bitcoinValue * rate;
+      setUSDValue(usd.toFixed(2));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-//     })
-  
+  return (
+    <div>
+      <label>Bitcoin value:</label>
+      <input type="number" step="any" value={bitcoinValue} onChange={(e) => setBitcoinValue(e.target.value)} />
+      <button onClick={convertToUSD}>Convert to USD</button>
+      {usdValue && (
+        <div>
+          <label>USD value:</label>
+          <span>{usdValue}</span>
+        </div>
+      )}
+    </div>
+  );
+}
 
-//     },[]);
-
-//     let btc = price.filter(prices=> prices.symbol === 'btc')
-//     bvc.push(btc)
-//     let thePrice = bvc.filter(bitc=>bitc.pric)
-//     setThePrice(thePrice)
-   
-//     console.log(price)
-
-//     console.log(btcPrice)
-
-//     function calcu (){
-//         bvc.map(prop=>{
-//             console.log(prop.pric)
-//         })
-//         calcu()
-//     // return activeCoin * btcPrice
-//     }
-
-// return(
-//     <div></div>
-// )
-// }
-// export default Converter
+export default BitcoinToUSD;

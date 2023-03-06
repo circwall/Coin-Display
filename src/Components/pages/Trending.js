@@ -42,7 +42,7 @@ const TrendingCoins = () =>{
     }
 
     return(
-        <section className=" trending p-5 my-5 ">
+        <section className=" trending container ">
             <h1 className="text-center " >Trending <Icon.Fire className="text-danger fire"/></h1>
             <h3 className="text-center ">Top 7 Searched Coins </h3>
             <Table  hover variant="" responsive className="">

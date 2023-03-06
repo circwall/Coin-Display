@@ -1,0 +1,29 @@
+.plug{
+    font-size: 200px;
+    z-index: -2;
+    margin-bottom: -340px;
+    opacity: 40%;
+}
+.plug{
+    animation:loading-1 4s linear  infinite alternate-reverse forwards;
+   }
+
+@keyframes loading-1{
+    0%{
+        transform: scale(1)
+    }
+    100%{  
+        transform: scale(.8)    }
+  }
+  @keyframes loading-2{
+    0%{
+        transform: rotate(0deg)
+    }
+    100%{  
+        transform: rotate(360deg)    }
+  }
+  .wifi{
+    font-size: 90px;
+    animation:loading-2 4s linear  infinite  forwards;
+
+  }

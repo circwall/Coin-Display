@@ -1,8 +1,9 @@
 import{ React,useState, useEffect }from 'react';
 import axios from 'axios';
-import { useGlobalcontext } from '../../Context';
-import Loading from '../pages/Loading';
+import { useGlobalcontext } from '../../../Context';
+import Loading from '../../pages/Loading';
 // import { Table } from 'react-bootstrap-icons';
+import './Nttfs.css';
 import Table from 'react-bootstrap/Table';
 const Nft = () => {
     const nfrUrl ='https://api.coingecko.com/api/v3/nfts/list';
@@ -14,8 +15,8 @@ const Nft = () => {
        axios.get(nfrUrl).then(response=>{
         console.log(response.data);
         const nfts = response.data.map(groupNtf=> {return{
-            name:groupNtf.name, id:groupNtf.id, assetPlat:groupNtf.asset_platfrom_id,
-            Symbol:groupNtf.symbol
+            name:groupNtf.name, id:groupNtf.id, assetPlat:groupNtf.asset_platform_id,
+            Symbol:groupNtf.symbol, adress:groupNtf.contract_address
         }})
         setNfts(nfts)
         setLoading(false)
@@ -32,22 +33,25 @@ const Nft = () => {
     )
     }
   return (
-    <section className='pt-5 mt-5 text-dark text-center'><h1>Nfts</h1>
-        <Table responsive hover>
+    <section className='pt-5 mt-5 text-dark container'><h1>Nfts</h1>
+        <Table responsive hover className='table-text text-center'>
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>name</th>
-                    <th>price</th>
+                    <th>symbol</th>
+                    <th>asset platform</th>
+                    <th>contract address</th>
                 </tr>
             </thead>
             {Nfts.map(eachNft=>{return(
-            <tbody>
+            <tbody >
                 <tr>
-                    <td>
+                    <td key={eachNft.name} className='text-left'>
                         {eachNft.name}
-                    </td>
-                    <td>{eachNft.Symbol}</td>
+                    </td >
+                    <td className='text-left' key={eachNft.assetPlat}>{eachNft.Symbol}</td>
+                    <td key={eachNft.assetPlat}>{eachNft.assetPlat}</td>
+                    <td key={eachNft.adress}>{eachNft.adress}</td>
                 </tr>
             </tbody>
         )})}

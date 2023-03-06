@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes,Link } from 'react-router-dom';
 import Home from './pages/Home';
 import TrendingCoins from './pages/Trending';
 import Coins from './pages/Coins';
-import Nft from './OtherComponents/Nft';
+import Nft from '../Components/OtherComponents/Ntf/Nft';
 
 
 const RouterP = () => {

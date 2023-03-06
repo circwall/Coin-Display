@@ -1,7 +1,9 @@
 :root{
   ---darkTheme:#0F1624;
 }
-
+.App{
+  background: #eef1f1;
+}
 
  /* Link style */
 .Link{
@@ -13,6 +15,9 @@
   color: rgb(97, 95, 95);
 }
 
+.Link:active{
+  border: 2px solid #0F1624;
+}
 
 .App{
   overflow: scroll;

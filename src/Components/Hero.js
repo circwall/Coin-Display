@@ -21,7 +21,7 @@ const Hero = () => {
         }
          ]
   return (
-    <section className='herosection pt-5 mt-5 pb-3'>
+    <section className='herosection pt-5 mt-5 pb-3' id='up'>
        <div className='heroDiv pb-4'>
             <div className='imageDiv text-center'>
                 <img className='img1 pb-4' src={Btc}/>
